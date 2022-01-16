@@ -12,7 +12,7 @@ if memo_type == 1
 	puts "メモしたい内容を記入してください"
 	puts "完了したら Ctrl + D を押下してください"
 	
-	memo = gets.chomp
+	memo = STDIN.read
 	
 	CSV.open("#{file_name}.csv","w") do |write|
 		
@@ -27,7 +27,7 @@ elsif memo_type == 2
 	file_name = gets.chomp
 	
 	puts"追加したい内容を入力してください"
-	memo = gets.chomp
+	memo = STDIN.read
 	
 	CSV.open("#{file_name}.csv","a") do |write|
 		write << ["#{memo}"]
